@@ -1,0 +1,66 @@
+# Azure Traveller — 代码风格基线
+# 权威来源：本文件。IDE（IntelliJ IDEA / VS Code / Eclipse）会自动读取，
+# 无需另行导入 codeStyle 配置。
+#
+# 大括号：Allman（换行式）——左大括号独占一行，适用于类、方法、控制语句。
+# 例外：lambda 体沿用 Java 惯例写在同一行（output -> { ... }），不拆行。
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{gradle,properties,toml,yml,yaml,conf,cfg}]
+indent_size = 2
+
+[*.{json,json5,bbmodel}]
+indent_size = 2
+
+[*.{bat,cmd}]
+end_of_line = crlf
+
+[*.{sh}]
+end_of_line = lf
+
+[*.md]
+trim_trailing_whitespace = false
+
+# 数据生成输出由 runData 覆写，固定 LF，见 .gitattributes
+[src/generated/**]
+end_of_line = lf
+
+[*.java]
+max_line_length = 120
+ij_java_class_brace_style = next_line
+ij_java_method_brace_style = next_line
+ij_java_if_brace_style = next_line
+ij_java_else_on_new_line = true
+ij_java_catch_on_new_line = true
+ij_java_finally_on_new_line = true
+ij_java_for_brace_style = next_line
+ij_java_while_brace_style = next_line
+ij_java_do_while_brace_style = next_line
+ij_java_switch_brace_style = next_line
+ij_java_try_brace_style = next_line
+ij_java_synchronized_brace_style = next_line
+ij_java_space_before_class_left_brace = true
+ij_java_space_before_method_left_brace = true
+ij_java_space_before_if_left_brace = true
+ij_java_space_before_for_left_brace = true
+ij_java_space_before_while_left_brace = true
+ij_java_space_before_switch_left_brace = true
+ij_java_space_before_catch_left_brace = true
+ij_java_space_before_try_left_brace = true
+ij_java_space_before_finally_left_brace = true
+ij_java_space_before_do_left_brace = true
+ij_java_space_before_else_left_brace = true
+ij_java_keep_line_breaks = true
+ij_java_lambda_brace_style = end_of_line
+ij_java_static_imports_use_asterisk = true
+ij_java_imports_layout = *,|,javax.**,java.**,|,|
+ij_java_layout_static_imports_separately = true
