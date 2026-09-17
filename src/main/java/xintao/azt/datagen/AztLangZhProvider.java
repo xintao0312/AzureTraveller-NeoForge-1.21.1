@@ -57,6 +57,7 @@ public class AztLangZhProvider extends LanguageProvider
             {
                 this.add("item." + AzureTraveller.MOD_ID + "." + prefix + "_sword", name + "剑");
             }
+
             if (material.has(AztMaterial.Form.TOOL))
             {
                 this.add("item." + AzureTraveller.MOD_ID + "." + prefix + "_pickaxe", name + "镐");
@@ -64,6 +65,7 @@ public class AztLangZhProvider extends LanguageProvider
                 this.add("item." + AzureTraveller.MOD_ID + "." + prefix + "_shovel", name + "锹");
                 this.add("item." + AzureTraveller.MOD_ID + "." + prefix + "_hoe", name + "锄");
             }
+
             if (material.has(AztMaterial.Form.ARMOR))
             {
                 for (Map.Entry<String, String> entry : ARMOR_SUFFIX.entrySet())
