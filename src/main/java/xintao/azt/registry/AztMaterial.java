@@ -188,10 +188,12 @@ public enum AztMaterial
     }
 
     /**
-     * 材料形态。组合常量（如 {@link #ALL}、{@link #SWORD_SET}）通过 {@link #of} 声明。
+     * 材料形态。
      * <p>
-     * 用静态字段而非枚举常量，是因为组合常量引用枚举常量——若两者在同一枚举内，
-     * 会触发类初始化顺序问题；分开则无此风险。
+     * 组合集既可用 {@link #ALL} 这类预定义常量，也可用 {@link #of} 现场声明。
+     * 预定义常量属于"预留的命名"：当前可能只有 {@link #ALL} 在用，
+     * 但 {@link #SHARD_ONLY}、{@link #SWORD_SET} 描述了明确的组合语义，
+     * 材料表里用它们比写 {@code Form.of(...)} 更清楚，故保留。
      */
     public enum Form
     {
@@ -204,14 +206,14 @@ public enum AztMaterial
         /** 盔甲四件套。 */
         ARMOR;
 
-        /** 全套形态。 */
+        /** 全套形态：碎片 + 剑 + 工具 + 盔甲。 */
         public static final Set<Form> ALL = Set.of(SHARD, SWORD, TOOL, ARMOR);
-        /** 仅碎片，不做装备（如晴空晶）。 */
+        /** 仅碎片，不做装备（如晴空晶这类只服务机制的辅助材料）。 */
         public static final Set<Form> SHARD_ONLY = Set.of(SHARD);
-        /** 碎片 + 武器工具，不做盔甲。 */
+        /** 碎片 + 剑 + 工具，不做盔甲。 */
         public static final Set<Form> SWORD_SET = Set.of(SHARD, SWORD, TOOL);
 
-        /** 构造形态集。 */
+        /** 构造形态集。例如"只有碎片"也可写 {@code Form.of(Form.SHARD)}。 */
         public static Set<Form> of(Form first, Form... rest)
         {
             Set<Form> set = EnumSet.of(first, rest);

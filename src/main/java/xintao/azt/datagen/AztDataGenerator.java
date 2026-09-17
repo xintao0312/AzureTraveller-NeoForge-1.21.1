@@ -10,7 +10,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import xintao.azt.AzureTraveller;
-import xintao.azt.world.gen.AztWorldGenProvider;
 
 import java.util.List;
 import java.util.Set;

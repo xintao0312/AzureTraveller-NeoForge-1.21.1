@@ -5,6 +5,7 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import xintao.azt.block.AztOreBlock;
+import xintao.azt.item.AztMaterialItem;
 import xintao.azt.registry.AztMaterial;
 
 import java.util.Set;
@@ -36,7 +37,7 @@ public class AztLootProvider extends BlockLootSubProvider
             }
             Block ore = AztOreBlock.get(material).get();
             // 掉落物就是该材料的碎片
-            this.add(ore, this.createOreDrop(ore, xintao.azt.item.AztMaterialItem.SHARD.get(material).get()));
+            this.add(ore, this.createOreDrop(ore, AztMaterialItem.SHARD.get(material).get()));
         }
     }
 
